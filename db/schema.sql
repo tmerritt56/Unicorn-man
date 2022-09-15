@@ -1,0 +1,2 @@
+DROP DATABASE IF EXISTS unicorn_db;
+CREATE DATABASE unicorn_db;
