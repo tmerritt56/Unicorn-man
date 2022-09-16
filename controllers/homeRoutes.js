@@ -23,7 +23,7 @@ router.get('/', withAuth, async (req, res) => {
 });
 
 router.get('/login', (req, res) => {
-  // If a session exists, redirect to the homepage
+  // If a session exists, redirects to the homepage
   if (req.session.logged_in) {
     res.redirect('/');
     return;
