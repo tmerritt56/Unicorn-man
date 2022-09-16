@@ -11,7 +11,7 @@ const sess = {
     secret: 'Super secret secret',
     resave: false,
     saveUninitialized: true,
-    sotre: new SequelizeStore({
+    store: new SequelizeStore({
         db:sequelize
     })
 };
@@ -24,7 +24,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(routes);
 app.engine('handlebars', hbs.engine);
-app.settings('view engine', 'handlebars'); 
+app.set('view engine', 'handlebars'); 
 
 sequelize.sync({ force:false }).then(()=> {
     app.listen(PORT, () => console.log('Now Unicorns are listening on 5001'));
