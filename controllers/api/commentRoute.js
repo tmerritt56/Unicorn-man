@@ -22,14 +22,14 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Post,
-        attributes: ['id', 'name', 'post_content', 'creation_date'],
+        attributes: ['id', 'title', 'post_content', 'creation_date'],
       },
       {
         model: Comment,
         attributes: ['id', 'comment_content', 'creation_date'],
         include: {
           model: Post,
-          attributes: ['name'],
+          attributes: ['username'],
         },
       },
     ],
@@ -58,7 +58,6 @@ router.post('/', (req, res) => {
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
-      req.session.github = dbUserData.github;
       req.session.loggedIn = true;
 
       res.json(dbUserData);
@@ -87,7 +86,6 @@ router.post('/login', (req, res) => {
     req.session.save(() => {
       req.session.user_id = dbUserData.id;
       req.session.username = dbUserData.username;
-      req.session.github = dbUserData.github;
       req.session.loggedIn = true;
 
       res.json({ user: dbUserData, message: 'Login Successful!' });
