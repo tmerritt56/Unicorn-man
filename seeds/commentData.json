@@ -1,16 +1,16 @@
 [
     {
-      "comment_text": "Keep going, almost there",
+      "comment_content": "Keep going, almost there",
       "user_id": 2,
       "post_id": 1
     },
     {
-      "comment_text": "second project - done!",
+      "comment_content": "second project - done!",
       "user_id": 3,
       "post_id": 1
     },
     {
-      "comment_text": "thanks everyone, good job",
+      "comment_content": "thanks everyone, good job",
       "user_id": 1,
       "post_id": 1
     }
