@@ -1,17 +1,17 @@
 [
     {
       "title": "My Post 1",
-      "content": "this is my first seed post.",
+      "post_content": "this is my first seed post.",
       "user_id": 2
     },
     {
       "title": "My Post 2",
-      "content": "This is the second post.",
+      "post_content": "This is the second post.",
       "user_id": 1
     },
     {
       "title": "My Post 3",
-      "content": "This the 3 post",
+      "post_content": "This the 3 post",
       "user_id": 3
     }
   ]
