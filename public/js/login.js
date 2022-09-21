@@ -1,10 +1,10 @@
-const loginForm = async (event) => {
-  event.preventDefault();
+async function loginForm(event) {
+    event.preventDefault();
 
-  const email = document.querySelector('#email-login').ariaValueMax.trim();
+  const email = document.querySelector('#email-login').value.trim();
   const password = document
     .querySelector('#password-login')
-    .ariaValueMax.trim();
+    .value.trim();
 
   if (email && password) {
     const response = await fetch('api/users/login', {
@@ -14,21 +14,19 @@ const loginForm = async (event) => {
     });
 
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
     }
   }
 };
 
-const signupForm = async (event) => {
+async function signupForm(event) {
   event.preventDefault();
 
-  const name = document.querySelector('#name-signup').ariaValueMax.trim();
-  const email = document.querySelector('#email-signup').ariaValueMax.trim();
-  const password = document
-    .querySelector('#password-signup')
-    .ariaValueMax.trim();
+  const name = document.querySelector('#name-signup').value.trim();
+  const email = document.querySelector('#email-signup').value.trim();
+  const password = document.querySelector('#password-signup').value.trim();
 
   if (name && email && password) {
     const response = await fetch('/api/users', {
@@ -37,7 +35,7 @@ const signupForm = async (event) => {
       headers: { 'Content-Type': 'application/json' },
     });
     if (response.ok) {
-      document.location.replace('/profile');
+      document.location.replace('/dashboard');
     } else {
       alert(response.statusText);
     }
