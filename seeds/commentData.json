@@ -1,17 +1,27 @@
 [
-    {
-      "comment_content": "Keep going, almost there",
-      "user_id": 2,
-      "post_id": 1
-    },
-    {
-      "comment_content": "second project - done!",
-      "user_id": 3,
-      "post_id": 1
-    },
-    {
-      "comment_content": "thanks everyone, good job",
-      "user_id": 1,
-      "post_id": 1
-    }
+  {
+    "comment_content": "Keep going, almost there",
+    "user_id": 2,
+    "post_id": 1
+  },
+  {
+    "comment_content": "second project - done!",
+    "user_id": 3,
+    "post_id": 1
+  },
+  {
+    "comment_content": "thanks everyone, good job",
+    "user_id": 1,
+    "post_id": 1
+  },
+  {
+    "comment_content": "no u",
+    "user_id": 1,
+    "post_id": 2
+  },
+  {
+    "comment_content": "eat slugs",
+    "user_id": 1,
+    "post_id": 3
+  }
 ]
