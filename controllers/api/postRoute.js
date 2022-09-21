@@ -1,11 +1,12 @@
 const router = require('express').Router();
 const { Post, User, Comment } = require('../../models');
+const sequelize = require('../../config/connection');
 const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
   Post.findAll({
-    attributes: ['id', 'title', 'post_content', 'created_at'],
-    order: [['created_at','DESC']],
+    attributes: ['id', 'title', 'creation_date', 'post_content'],
+    order: [['creation_date', 'DESC']],
     include: [
       {
         model: Comment,
@@ -14,7 +15,7 @@ router.get('/', (req, res) => {
           'comment_content',
           'post_id',
           'user_id',
-          'created_at'
+          'creation_date',
         ],
         include: {
           model: User,
@@ -28,10 +29,10 @@ router.get('/', (req, res) => {
     ],
   })
     .then((dbPostData) => res.json(dbPostData))
-    .catch((err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
-    }));
+    });
 });
 
 router.get('/:id', (req, res) => {
@@ -39,7 +40,7 @@ router.get('/:id', (req, res) => {
     where: {
       id: req.params.id,
     },
-    attributes: ['id', 'title', 'post_content','created_at'],
+    attributes: ['id', 'title', 'post_content', 'creation_date'],
     include: [
       {
         model: User,
@@ -49,10 +50,10 @@ router.get('/:id', (req, res) => {
         model: Comment,
         attributes: [
           'id',
-          'comment_content',
           'user_id',
           'post_id',
-          'created_at'
+          'comment_content',
+          'creation_date',
         ],
         include: {
           model: User,
@@ -76,7 +77,7 @@ router.get('/:id', (req, res) => {
 
 router.post('/', withAuth, (req, res) => {
   Post.create({
-    title: req.body.title,
+    name: req.body.name,
     post_content: req.body.post_content,
     user_id: req.session.user_id,
   })
@@ -90,7 +91,7 @@ router.post('/', withAuth, (req, res) => {
 router.put('/:id', withAuth, (req, res) => {
   Post.update(
     {
-      title: req.body.title,
+      name: req.body.name,
       post_content: req.body.post_content,
     },
     {
