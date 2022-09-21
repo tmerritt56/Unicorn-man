@@ -6,7 +6,7 @@ router.get('/', (req, res) => {
   User.findAll({
     attributes: { exclude: ['password'] },
   })
-    .then((dbCommentData) => res.json(dbCommentData))
+    .then((dbUserData) => res.json(dbUserData))
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
@@ -34,12 +34,12 @@ router.get('/:id', (req, res) => {
       },
     ],
   })
-    .then((dbCommentData) => {
-      if (!dbCommentData) {
+    .then((dbUserData) => {
+      if (!dbUserData) {
         res.status(404).json({ message: 'No user found with this id' });
         return;
       }
-      res.json(dbCommentData);
+      res.json(dbUserData);
     })
     .catch((err) => {
       console.log(err);
@@ -54,13 +54,13 @@ router.post('/', (req, res) => {
     email: req.body.email,
     password: req.body.password,
     github: req.body.github,
-  }).then((dbCommentData) => {
+  }).then((dbUserData) => {
     req.session.save(() => {
-      req.session.user_id = dbCommentData.id;
-      req.session.username = dbCommentData.username;
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
       req.session.loggedIn = true;
 
-      res.json(dbCommentData);
+      res.json(dbUserData);
     });
   });
 });
@@ -70,13 +70,13 @@ router.post('/login', (req, res) => {
     where: {
       email: req.body.email,
     },
-  }).then((dbCommentData) => {
-    if (!dbCommentData) {
+  }).then((dbUserData) => {
+    if (!dbUserData) {
       res.status(400).json({ message: 'Incorrect "Email" or Password!' });
       return;
     }
 
-    const vaildPassword = dbCommentData.checkPassword(req.body.password);
+    const vaildPassword = dbUserData.checkPassword(req.body.password);
 
     if (!vaildPassword) {
       res.status(400).json({ message: 'Incorrect Email or "Password"!' });
@@ -84,11 +84,11 @@ router.post('/login', (req, res) => {
     }
 
     req.session.save(() => {
-      req.session.user_id = dbCommentData.id;
-      req.session.username = dbCommentData.username;
+      req.session.user_id = dbUserData.id;
+      req.session.username = dbUserData.username;
       req.session.loggedIn = true;
 
-      res.json({ user: dbCommentData, message: 'Login Successful!' });
+      res.json({ user: dbUserData, message: 'Login Successful!' });
     });
   });
 });
@@ -110,12 +110,12 @@ router.put('/:id', withAuth, (req, res) => {
       id: req.params.id,
     },
   })
-    .then((dbCommentData) => {
-      if (!dbCommentData[0]) {
+    .then((dbUserData) => {
+      if (!dbUserData[0]) {
         res.status(404).json({ message: 'No user found with this id' });
         return;
       }
-      res.json(dbCommentData);
+      res.json(dbUserData);
     })
     .catch((err) => {
       console.log(err);
@@ -129,12 +129,12 @@ router.delete('/:id', withAuth, (req, res) => {
       id: req.params.id,
     },
   })
-    .then((dbCommentData) => {
-      if (!dbCommentData) {
+    .then((dbUserData) => {
+      if (!dbUserData) {
         res.status(404).json({ message: 'No user found with this id' });
         return;
       }
-      res.json(dbCommentData);
+      res.json(dbUserData);
     })
     .catch((err) => {
       console.log(err);
