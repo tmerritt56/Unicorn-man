@@ -1,19 +1,18 @@
-<html lang='en'>
+<!DOCTYPE html>
+<html lang="en">
 
-  <head>
-    <title>homePage</title>
-    <meta charset='UTF-8' />
-    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
-    <title>Unicorn</title>
-    <link rel='stylesheet' href='/css/jass.css' />
-    <link rel='stylesheet' href='/css/style.css' />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Tech Blog!</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.0/css/bulma.min.css">
+  <link rel="stylesheet" href="/stylesheets/style.css">
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+</head>
 
-  </head>
-  
-    <div class="wrapper">
+  <div class="wrapper">
     <header>
-        <h1 class="has-text-black px-3 py-3 has-text-weight-bold">Unicorns Unite!</h1>
+        <h1 class="has-text-black px-3 py-3 has-text-weight-bold">The Tech Blog!</h1>
         <nav class="navbar mt-2">
             {{#if loggedIn}}
             <a href="/" class="navbar-item is-hoverable pt-1">Homepage</a>
@@ -22,9 +21,22 @@
             <button id="logout" class="button is-danger">Logout</button>
             {{else}}
             <a href="/" class="navbar-item is-hoverable pt-1">Homepage</a>
-            
+            <a href="/login" class="button is-primary">Login</a>
             {{/if}}
         </nav>
     </header>
-    {{{body}}}
+
+    <main>
+            {{{ body }}}
+    </main>
+
+    <footer class="footer rows pb-2">
+        <div class="row-is-full content has-text-centered"> Hello
+  </div>
+
+{{#if loggedIn}}
+<script src="/js/logout.js"></script>
+{{/if}}
+</body>
+
 </html>
