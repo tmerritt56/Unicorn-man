@@ -1,17 +1,20 @@
 [
-    {
-      "username": "Kevin",
-      "email": "kevin@gmail.com",
-      "password": "password12345"
-    },
-    {
-      "username": "Tamika",
-      "email": "tamika@gmail.com",
-      "password": "password12345"
-    },
-    {
-      "username": "Sally",
-      "email": "sally@gmail.com",
-      "password": "password12345"
-    }
+  {
+    "id": 1,
+    "username": "Kevin",
+    "email": "kevin@gmail.com",
+    "password": "password12345"
+  },
+  {
+    "id": 2,
+    "username": "Tamika",
+    "email": "tamika@gmail.com",
+    "password": "password12345"
+  },
+  {
+    "id": 3,
+    "username": "Sally",
+    "email": "sally@gmail.com",
+    "password": "password12345"
+  }
 ]
