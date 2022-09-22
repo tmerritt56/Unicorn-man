@@ -22,11 +22,11 @@ router.get('/:id', (req,res) => {
         include: [
             {
                 model: Post,
-                attributes: ['id', 'title', 'post_content', 'created_at']
+                attributes: ['id', 'title', 'post_content', 'creation_date']
             },
             {
                 model: Comment,
-                attributes: ['id','comment_text','created_at'],
+                attributes: ['id','comment_content','creation_date'],
                 include: {
                     model: Post, 
                     attributes: ['title']
@@ -53,7 +53,7 @@ router.post('/', async (req,res) => {
 
         req.session.save(() => {
             req.session.user_id = userData.id;
-            req.session.logged_in = true;
+            req.session.loggedIn = true;
             res.status(200).json(userData);
         });
     } catch (err) {
@@ -83,7 +83,7 @@ router.post('/login', async (req,res) => {
 
         req.session.save(() => {
             req.session.user_id = userData.id;
-            req.session.logged_in = true;
+            req.session.loggedIn = true;
 
             res.json({ user: userData, message: 'You are now a Unicorn, please proceed!'});
         });
@@ -93,7 +93,7 @@ router.post('/login', async (req,res) => {
 });
 
 router.post('/logout', (req,res) => {
-    if(req.session.logged_in) {
+    if(req.session.loggedIn) {
         req.session.destroy(() => {
             res.status(204).end();
         });
