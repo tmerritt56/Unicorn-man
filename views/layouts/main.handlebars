@@ -18,12 +18,13 @@
             {{#if loggedIn}}
             <a href="/" class="navbar-item is-hoverable pt-1">Homepage</a>
             <a href="/dashboard" class="navbar-item is-hoverable pt-1">Dashboard</a>
-            <a href="/dashboard/create/" class="navbar-item is-hoverable pt-1 mr-4">Create Post</a>
+            <a href="/dashboard/createpost/" class="navbar-item is-hoverable pt-1 mr-4">Create Post</a>
             <button id="logout" class="button is-danger">Logout</button>
             <p>Logged in</p>
             {{else}}
-            <a href="/" class="navbar-item is-hoverable pt-1">Homepage</a>
+            {{!-- <a href="/" class="navbar-item is-hoverable pt-1">Homepage</a> --}}
             <a href="/login" class="navbar-item is-hoverable pt-1">Login</a>
+            <a href="/signup" class="navbar-item is-hoverable pt-1">Sign Up</a>
             <p>not logged in</p>
             {{/if}}
         </nav>
