@@ -9,7 +9,7 @@ router.get('/', withAuth, (req, res) => {
       // use the ID from the session
       user_id: req.session.user_id,
     },
-    attributes: ['id', 'title', 'creation_date', 'post_content'],
+    attributes: ['id', 'title', 'post_content'],
     include: [
       {
         model: Comment,
