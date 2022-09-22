@@ -24,37 +24,32 @@ router.get('/', withAuth, async (req, res) => {
 
 router.get('/', (req, res) => {
   console.log(req.session);
-  
+
   Post.findAll({
-    attributes: [
-      'id',
-      'title',
-      ,
-      'post_content'
-    ],
+    attributes: ['id', 'title', 'post_content'],
     include: [
       {
         model: Comment,
-        attributes: ['id', 'comment_content', 'post_id', 'user_id', ],
+        attributes: ['id', 'comment_content', 'post_id', 'user_id'],
         include: {
           model: User,
-          attributes: ['username']
-        }
+          attributes: ['username'],
+        },
       },
       {
         model: User,
-        attributes: ['username']
-      }
-    ]
+        attributes: ['username'],
+      },
+    ],
   })
-    .then(dbPostData => {
-      const posts = dbPostData.map(post => post.get({ plain: true }));
+    .then((dbPostData) => {
+      const posts = dbPostData.map((post) => post.get({ plain: true }));
       res.render('homepage', {
-          posts,
-          loggedIn: req.session.loggedIn
-        });
+        posts,
+        loggedIn: req.session.loggedIn,
+      });
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
@@ -82,45 +77,41 @@ router.get('/signup', (req, res) => {
 router.get('/post/:id', (req, res) => {
   Post.findOne({
     where: {
-      id: req.params.id
+      id: req.params.id,
     },
-    attributes: [
-      'id',
-      'title',
-      'post_content'
-    ],
+    attributes: ['id', 'title', 'post_content'],
     include: [
       {
         model: Comment,
-        attributes: ['id','comment_content', 'post_id', 'user_id', ],
+        attributes: ['id', 'comment_content', 'post_id', 'user_id'],
         include: {
           model: User,
-          attributes: ['username']
-        }
+          attributes: ['username'],
+        },
       },
       {
-        model:User,
-        attributes: ['username']
+        model: User,
+        attributes: ['username'],
+      },
+    ],
+  })
+    .then((dbPostData) => {
+      if (!dbPostData) {
+        res.status(404).json({ message: 'Not Found' });
+        return;
       }
-    ]
-  })
-  .then(dbPostData=> {
-    if(!dbPostData) {
-      res.status(404).json({message: 'Not Found'});
-      return;
-    }
-    const post =dbPostData.get({plain:true});
+      const post = dbPostData.get({ plain: true });
 
-    res.render('single-post', {
-      post,
-      loggedIn: req.session.loggedIn
+      res.render('single-post', {
+        post,
+        loggedIn: req.session.loggedIn,
+      });
+    })
+    .catch((err) => {
+      console.log(err);
+      res.status(500).json(err);
     });
-  })
-  .catch(err => {
-    console.log(err);
-    res.status(500).json(err);
-  });
 });
 
 module.exports = router;
-// DO NOT TOUCH ME 
+// DO NOT TOUCH ME

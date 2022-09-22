@@ -3,30 +3,30 @@
     "comment_content": "Keep going, almost there",
     "user_id": 2,
     "post_id": 1,
-    "creation_date": "10/10/2020"
+    "creation_date": "10/11/2022"
   },
   {
     "comment_content": "second project - done!",
     "user_id": 3,
     "post_id": 1,
-    "creation_date": "10/10/2020"
+    "creation_date": "10/12/2022"
   },
   {
     "comment_content": "thanks everyone, good job",
     "user_id": 1,
     "post_id": 1,
-    "creation_date": "10/10/2020"
+    "creation_date": "10/10/2022"
   },
   {
     "comment_content": "no u",
     "user_id": 1,
     "post_id": 2,
-    "creation_date": "10/10/2020"
+    "creation_date": "10/13/2022"
   },
   {
     "comment_content": "eat slugs",
     "user_id": 1,
     "post_id": 3,
-    "creation_date": "10/10/2020"
+    "creation_date": "10/14/2022"
   }
 ]
