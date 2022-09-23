@@ -9,24 +9,38 @@
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script src="https://kit.fontawesome.com/73dc962ca4.js" crossorigin="anonymous"></script>
+
 </head>
 
   <div class="wrapper">
     <header>
-        <h1 class="has-text-black px-3 py-3 has-text-weight-bold">Social Unicorn</h1>
-        <nav class="navbar mt-2">
+       
+        <nav>
+          <div class="nav__container">
+           <h1 class="nav__logo">Social Unicorn</h1>
             {{#if loggedIn}}
-            <a href="/" class="navbar-item is-hoverable pt-1">Homepage</a>
-            <a href="/dashboard" class="navbar-item is-hoverable pt-1">Dashboard</a>
-            <a href="/dashboard/create/" class="navbar-item is-hoverable pt-1 mr-4">Create Post</a>
-            <button id="logout" class="button is-danger">Logout</button>
+            <a href="/" class="navbar-item is-hoverable pt-1 nav__items">Homepage</a>
+            <a href="/dashboard" class="navbar-item is-hoverable pt-1 nav__items category__button">Dashboard</a>
+            <a href="/dashboard/create/" class="navbar-item is-hoverable pt-1 mr-4 nav__items category__button">Create Post</a>
+            <button id="logout" class="button is-danger nav__items">Logout</button>
             <p>Logged in</p>
             {{else}}
             {{!-- <a href="/" class="navbar-item is-hoverable pt-1">Homepage</a> --}}
             <a href="/login" class="navbar-item is-hoverable pt-1">Login</a>
             <a href="/signup" class="navbar-item is-hoverable pt-1">Sign Up</a>
-            <p>not logged in</p>
+            <div>
+	                  <input type="checkbox" class="checkbox" id="chk" />
+	                  <label class="label" for="chk">
+		                  <i class="fa-solid fa-horse-head"></i>
+	                    <i class="fa-solid fa-sun"></i>
+		                  <div class="ball"></div>
+	                    </label>
+                      </div>
+
+            <p class="logIn">not logged in</p>
             {{/if}}
+            </div>
         </nav>
     </header>
 
@@ -34,13 +48,12 @@
             {{{ body }}}
     </main>
 
-    <footer class="footer rows pb-2">
-        <div class="row-is-full content has-text-centered"> Hello
-  </div>
-
 {{#if loggedIn}}
 <script src="/js/logout.js"></script>
 {{/if}}
+  
+<script src="/features/darkmode/button.js"></script>
 </body>
+
 
 </html>
