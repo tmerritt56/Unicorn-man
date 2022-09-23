@@ -1,11 +1,12 @@
 const router = require('express').Router();
+const session = require('express-session');
 const { Post, User, Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
   Post.findAll({})
     .then((dbPostData) => res.json(dbPostData))
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
@@ -53,42 +54,43 @@ router.get('/edit/:id', withAuth, (req, res) => {
     });
 });
 
-router.post('/', withAuth, async (req,res) => {
-  try { 
-      const postData = await Post.create(req.body);
+router.post('/', withAuth, async (req, res) => {
+  try {
+    const postData = await Post.create({
+      ...req.body,
+      user_id: req.session.user_id,
+    });
 
-      req.session.save(() => {
-          req.session.user_id = postData.id;
-          req.session.loggedIn = true;
-          res.status(200).json(postData);
-      });
+    res.status(200).json(postData);
   } catch (err) {
-      res.status(400).json(err);
+    res.status(400).json(err);
   }
 });
 
-router.get('/:id', withAuth,(req, res) => {
-  Post.findOne({
-    title: req.body.title,
-    post_content: req.body.post_content
-  },
-  {
-    where: {
-      id: req.params.id
+router.get('/:id', withAuth, (req, res) => {
+  Post.findOne(
+    {
+      title: req.body.title,
+      post_content: req.body.post_content,
+    },
+    {
+      where: {
+        id: req.params.id,
+      },
     }
-  })
-.then((dbPostData) => {
+  )
+    .then((dbPostData) => {
       if (!dbPostData) {
         res.status(404).json({ message: 'No post found with this id' });
         return;
       }
       res.json(dbPostData);
     })
-    .catch(err => {
+    .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
-  });
+});
 
 router.delete('/:id', withAuth, (req, res) => {
   Post.destroy({
