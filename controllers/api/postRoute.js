@@ -12,7 +12,9 @@ router.get('/', (req, res) => {
     });
 });
 
-router.get('/edit/:id', withAuth, (req, res) => {
+
+
+router.get('/:id', withAuth, (req, res) => {
   Post.findOne({
     where: {
       id: req.params.id,
@@ -40,13 +42,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
         return;
       }
 
-      // serialize the data
-      const post = dbPostData.get({ plain: true });
-
-      res.render('editPost', {
-        post,
-        loggedIn: true,
-      });
+      res.json(dbPostData);
     })
     .catch((err) => {
       console.log(err);
@@ -67,30 +63,29 @@ router.post('/', withAuth, async (req, res) => {
   }
 });
 
-router.get('/:id', withAuth, (req, res) => {
-  Post.findOne(
-    {
-      title: req.body.title,
-      post_content: req.body.post_content,
-    },
-    {
-      where: {
-        id: req.params.id,
-      },
+router.put('/:id', withAuth, (req, res) => {
+  Post.update({
+   title: req.body.title,
+   post_content: req.body.post_content
+  },
+  {
+    where: {
+      id: req.params.id
     }
-  )
+  })
     .then((dbPostData) => {
       if (!dbPostData) {
         res.status(404).json({ message: 'No post found with this id' });
         return;
       }
       res.json(dbPostData);
-    })
+      })
     .catch((err) => {
       console.log(err);
       res.status(500).json(err);
     });
-});
+  });
+
 
 router.delete('/:id', withAuth, (req, res) => {
   Post.destroy({
