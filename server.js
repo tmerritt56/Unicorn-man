@@ -26,6 +26,6 @@ app.use(routes);
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
 
-sequelize.sync({ force: false }).then(() => {
+sequelize.sync({ alter: true }).then(() => {
   app.listen(PORT, () => console.log('Unicorns are now listening on 5001'));
 });
