@@ -25,8 +25,7 @@ router.get('/', (req, res) => {
     .then((dbPostData) => {
       const posts = dbPostData.map((post) => post.get({ plain: true }));
       res.render('homepage', {
-        posts,
-        loggedIn: req.session.loggedIn,
+        posts
       });
     })
     .catch((err) => {
@@ -38,8 +37,10 @@ router.get('/', (req, res) => {
 router.get('/login', (req, res) => {
   // If a session exists, redirects to the homepage
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect('/dashboard');
     return;
+  }else{
+    res.render('login');
   }
 });
 
