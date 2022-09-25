@@ -3,6 +3,8 @@ const { faker } = require('@faker-js/faker');
 //import fs from 'fs'
 const fs = require('fs');
 
+const sequelize = require('../config/connection');
+const { User, Post, Comment } = require('../models');
 function generateUsers() {
 
     let users = []
@@ -75,4 +77,5 @@ let dataUser = generateUsers();
 let dataPost = generatePosts();
 let dataComment = generateComments();
 
-fs.writeFileSync('data.json', JSON.stringify(dataUser, dataPost, dataComment, null, '\t'));
+// fs.writeFileSync('data.json', JSON.stringify(dataUser, dataPost, dataComment, null, '\t'));
+
