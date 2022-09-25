@@ -5,7 +5,6 @@ const fs = require('fs');
 
 const sequelize = require('../config/connection');
 const { User, Post, Comment } = require('../models');
-
 function generateUsers() {
 
     let users = []
