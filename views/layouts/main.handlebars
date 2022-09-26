@@ -21,8 +21,8 @@
            <h1 class="nav__logo">Social Unicorn</h1>
             {{#if loggedIn}}
             <a href="/" class="navbar-item is-hoverable pt-1 nav__items">Homepage</a>
-            <a href="/dashboard" class="navbar-item is-hoverable pt-1 nav__items category__button">Dashboard</a>
-            <a href="/dashboard/create/" class="navbar-item is-hoverable pt-1 mr-4 nav__items category__button">Create Post</a>
+            <a href="/dashboard" class="navbar-item is-hoverable pt-1 nav__items ">Dashboard</a>
+            <a href="/dashboard/create/" class="navbar-item is-hoverable pt-1 mr-4 nav__items ">Create Post</a>
             <button id="logout" class="button is-danger nav__items">Logout</button>
             <div>
 	                  <input type="checkbox" class="checkbox" id="chk" />
@@ -55,9 +55,9 @@
             {{{ body }}}
     </main>
 
-
+  <footer class="foot">
         <div class="row-is-full content has-text-centered"> Made with 🌈🦄💜 By: Tara,Ryan,Harrison,Aleks</div>
-
+  </footer>
 {{#if loggedIn}}
 <script src="/js/logout.js"></script>
 {{/if}}
