@@ -42,7 +42,7 @@ router.get('/', (req, res) => {
 router.get('/login', (req, res) => {
   // If a session exists, redirects to the homepage
   if (req.session.loggedIn) {
-    res.redirect('/');
+    res.redirect('/dashboard');//currently used to get around navbar bug, swap to '/' once fixed
     return;
   } else {
     res.render('login');

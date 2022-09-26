@@ -1,20 +1,122 @@
 [
   {
-    "title": "My Post 1",
-    "post_content": "this is my first seed post.",
-    "user_id": 2,
-    "created_at": "2022-09-22 23:41:50"
-  },
-  {
-    "title": "My Post 2",
-    "post_content": "This is the second post.",
-    "user_id": 1,
-    "created_at": "2022-09-22 23:41:50"
-  },
-  {
-    "title": "My Post 3",
-    "post_content": "This the 3 post",
+    "title": "Et nam non.",
+    "post_content": "Possimus itaque qui nisi numquam sit eligendi aut fugit.",
     "user_id": 3,
-    "created_at": "2022-09-22 23:41:50"
+    "created_at": "2022-09-25T06:46:23.772Z"
+  },
+  {
+    "title": "Non illum et.",
+    "post_content": "Voluptatibus maiores rerum est est voluptatibus voluptates.",
+    "user_id": 4,
+    "created_at": "2022-09-25T13:22:44.300Z"
+  },
+  {
+    "title": "Distinctio possimus error.",
+    "post_content": "Non suscipit et.",
+    "user_id": 1,
+    "created_at": "2022-09-25T03:28:08.476Z"
+  },
+  {
+    "title": "Laboriosam doloribus ab.",
+    "post_content": "Unde earum et vel vel ut deleniti eum in facere.",
+    "user_id": 8,
+    "created_at": "2022-09-25T03:12:40.732Z"
+  },
+  {
+    "title": "Dolores quia quia.",
+    "post_content": "Non est provident dignissimos.",
+    "user_id": 9,
+    "created_at": "2022-09-25T14:36:19.062Z"
+  },
+  {
+    "title": "Est impedit debitis.",
+    "post_content": "Veritatis eaque illo vero voluptas pariatur autem consectetur magnam quo.",
+    "user_id": 2,
+    "created_at": "2022-09-25T21:06:55.235Z"
+  },
+  {
+    "title": "Eius expedita nihil.",
+    "post_content": "Incidunt enim soluta id explicabo at molestiae nobis ea.",
+    "user_id": 1,
+    "created_at": "2022-09-25T03:35:33.290Z"
+  },
+  {
+    "title": "Ea mollitia autem.",
+    "post_content": "Ut porro rem eos voluptatem velit dicta adipisci in.",
+    "user_id": 3,
+    "created_at": "2022-09-26T00:30:25.447Z"
+  },
+  {
+    "title": "Aspernatur qui fugit.",
+    "post_content": "Consequatur omnis facere error voluptatum nisi vitae error ad.",
+    "user_id": 8,
+    "created_at": "2022-09-25T15:50:52.677Z"
+  },
+  {
+    "title": "Ullam nihil expedita.",
+    "post_content": "Eum illum modi.",
+    "user_id": 8,
+    "created_at": "2022-09-25T14:06:58.132Z"
+  },
+  {
+    "title": "Est fugit consequatur.",
+    "post_content": "Dolore ea alias qui aut atque tempora.",
+    "user_id": 7,
+    "created_at": "2022-09-25T09:13:43.220Z"
+  },
+  {
+    "title": "Eaque eaque saepe.",
+    "post_content": "Aut pariatur dolore debitis dolor.",
+    "user_id": 8,
+    "created_at": "2022-09-25T20:22:24.554Z"
+  },
+  {
+    "title": "Quos rerum magnam.",
+    "post_content": "Odio consectetur voluptas dolore eum alias non aut.",
+    "user_id": 6,
+    "created_at": "2022-09-26T00:21:15.963Z"
+  },
+  {
+    "title": "Beatae eaque non.",
+    "post_content": "Amet illum excepturi aperiam nostrum omnis consequatur.",
+    "user_id": 7,
+    "created_at": "2022-09-25T06:11:30.563Z"
+  },
+  {
+    "title": "Non facilis quasi.",
+    "post_content": "Ex cupiditate assumenda libero repudiandae aut illo suscipit.",
+    "user_id": 1,
+    "created_at": "2022-09-25T15:47:36.231Z"
+  },
+  {
+    "title": "Pariatur et aliquid.",
+    "post_content": "Repellat nemo aliquam tempore nemo fugiat consequatur est esse eaque.",
+    "user_id": 9,
+    "created_at": "2022-09-25T02:13:33.402Z"
+  },
+  {
+    "title": "Hic doloribus voluptate.",
+    "post_content": "Enim fuga est architecto error consequuntur tempore.",
+    "user_id": 3,
+    "created_at": "2022-09-25T19:54:15.295Z"
+  },
+  {
+    "title": "Non qui rerum.",
+    "post_content": "Est fugit dolore rerum et nam.",
+    "user_id": 5,
+    "created_at": "2022-09-25T21:02:50.653Z"
+  },
+  {
+    "title": "Sapiente quia magni.",
+    "post_content": "Et dolor eligendi eos eaque ea voluptatibus asperiores dignissimos libero.",
+    "user_id": 4,
+    "created_at": "2022-09-25T07:31:38.370Z"
+  },
+  {
+    "title": "Quae quo ducimus.",
+    "post_content": "Aut distinctio aut praesentium ab.",
+    "user_id": 3,
+    "created_at": "2022-09-25T15:49:03.170Z"
   }
 ]
