@@ -471,3 +471,6 @@ input{
   width: 80px;
 }
 
+.delete-post-btn {
+  background-color: rgb(241, 82, 82)
+}
