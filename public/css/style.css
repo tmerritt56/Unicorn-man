@@ -38,8 +38,8 @@
 }
 
 main {
-  background-color: white;
   margin-top: 6em;
+  background: tra;
 }
 
 body {
@@ -234,6 +234,7 @@ p {
 .card-header-title {
   background-color: black;
   color: white;
+  border-radius: 8px 8px 0px 0px;
 }
 
 .category__button:hover {
@@ -241,8 +242,9 @@ p {
 }
 
 .card-content {
-  background-color: grey;
-  color: white;
+  background-color: #f8f8f8;
+  color: black;
+  border-radius: 0px 0px 8px 8px;
 }
 
 footer {
@@ -396,6 +398,32 @@ input{
       border: none;
   }
 
+  .comment-form {
+
+    background-color: var(--color-primary-light);
+    color: black;
+    position: absolute;
+    align-items:flex-end;
+    justify-content: space-between;
+    
+  }
+
+  .comment-form-div {
+    align-items: center;
+    justify-content: center;
+  }
+
+  #formButton {
+    margin: auto;
+    width: auto;
+  }
+
+  #textAreaComment {
+    min-height: 50px;
+    min-width: 275px;
+    border-radius: 3px;
+}
+
 
 .loginHead {
   font-size: 32px;
@@ -417,12 +445,7 @@ input{
     margin-right: 5px;
   }
 
-  .comment-form {
-
-    background-color: var(--color-primary-light);
-    color: black
-    
-  }
+  
 
   .button-is-warning-div {
     justify-content: center;
@@ -438,3 +461,13 @@ input{
     width: 115px;
     margin-top: -35px;
 }
+
+.button.is-danger {
+  background-color: #f14668;
+  border-color: transparent;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  width: 80px;
+}
+
