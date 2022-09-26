@@ -26,7 +26,6 @@
   --card-border-radius-5: 5rem;
 }
 
- 
 * {
   margin: 0;
   padding: 0;
@@ -40,6 +39,7 @@
 
 main {
   background-color: beige;
+  margin-top: 6em;
 }
 
 body {
@@ -52,19 +52,17 @@ body {
   background-color: beige;
 }
 
-
 @keyframes gradient {
-	0% {
-		background-position: 0% 50%;
-	}
-	50% {
-		background-position: 100% 50%;
-	}
-	100% {
-		background-position: 0% 50%;
-	}
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
-
 
 .container {
   width: var(--container-width-lg);
@@ -83,7 +81,11 @@ section {
   margin-top: 7rem;
 }
 
-h1, h2, h3, h4, h5 {
+h1,
+h2,
+h3,
+h4,
+h5 {
   color: var(--color-white);
   line-height: 1.3;
 }
@@ -118,52 +120,49 @@ img {
   object-fit: cover;
 }
 
-
-
 /* ============================================================================== DM Buttons ================================================================================== */
 
 .checkbox {
-	opacity: 0;
-	position: absolute;
+  opacity: 0;
+  position: absolute;
 }
 
 .label {
-	background-color: #111;
-	border-radius: 50px;
-	cursor: pointer;
-	display: flex;
-	align-items: center;
-	justify-content: space-between;
-	padding: 5px;
-	position: relative;
-	height: 26px;
-	width: 50px;
-	transform: scale(1.5);
+  background-color: #111;
+  border-radius: 50px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 5px;
+  position: relative;
+  height: 26px;
+  width: 50px;
+  transform: scale(1.5);
 }
 
 .label .ball {
-	background-color: #fff;
-	border-radius: 50%;
-	position: absolute;
-	top: 2px;
-	left: 2px;
-	height: 22px;
-	width: 22px;
-	transform: translateX(0px);
-	transition: transform 0.2s linear;
+  background-color: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  height: 22px;
+  width: 22px;
+  transform: translateX(0px);
+  transition: transform 0.2s linear;
 }
 
 .checkbox:checked + .label .ball {
-	transform: translateX(24px);
+  transform: translateX(24px);
 }
 
-
 .fa-horse-head {
-	color: pink;
+  color: pink;
 }
 
 .fa-sun {
-	color: #f39c12;
+  color: #f39c12;
 }
 
 /* ============================================================================== NAV ================================================================================== */
@@ -186,13 +185,11 @@ nav {
   background-color: black;
 }
 
-
 .nav__items {
   display: flex;
   align-items: center;
   gap: 4rem;
 }
-
 
 .nav__items li a {
   border-radius: 0;
@@ -203,7 +200,6 @@ nav {
   display: flex;
   align-items: center;
 }
-
 
 .nav__logo {
   font-weight: 600;
@@ -253,14 +249,20 @@ footer {
   background-color: black;
   color: white;
 }
+
+.comments {
+  background-color: beige;
+  color: black;
+}
+
 /* /////Dark mode /////*/
 /*-------Dark Mode ------- */
 
 body.dark {
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-background-size: 400% 400%;
-animation: gradient 15s ease infinite;
-height: 100vh;
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  height: 100vh;
 }
 
 body.dark main {
@@ -271,11 +273,18 @@ body.dark main {
 
 body.dark .nav__container {
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-background-size: 400% 400%;
-animation: gradient 15s ease infinite;
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
 }
 body.dark footer {
-  background: linear-gradient(-45deg, #e73c7e, #bbce12, #23d5ab, #ee7752, #6863f9);
+  background: linear-gradient(
+    -45deg,
+    #e73c7e,
+    #bbce12,
+    #23d5ab,
+    #ee7752,
+    #6863f9
+  );
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   height: 20em;
@@ -283,15 +292,30 @@ body.dark footer {
 }
 
 body.dark footer,
-body.dark .card-content {
-  background: linear-gradient(-45deg, #e73c7e, #bbce12, #23d5ab, #ee7752, #6863f9);
+body.dark .card-content,
+body.dark .comments {
+  background: linear-gradient(
+    -45deg,
+    #e73c7e,
+    #bbce12,
+    #23d5ab,
+    #ee7752,
+    #6863f9
+  );
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   color: black;
 }
 
 body.dark .card-header-title {
-  background: linear-gradient(-45deg, #23d5ab, #7a3b8a, #23d5ab, #8f21d8, #6863f9);
+  background: linear-gradient(
+    -45deg,
+    #23d5ab,
+    #7a3b8a,
+    #23d5ab,
+    #8f21d8,
+    #6863f9
+  );
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   color: black;

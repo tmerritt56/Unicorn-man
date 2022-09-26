@@ -31,6 +31,7 @@ router.get('/', (req, res) => {
       const posts = dbPostData.map((post) => post.get({ plain: true }));
       res.render('homepage', {
         posts,
+        loggedIn: req.session.loggedIn,
       });
     })
     .catch((err) => {
@@ -42,7 +43,7 @@ router.get('/', (req, res) => {
 router.get('/login', (req, res) => {
   // If a session exists, redirects to the homepage
   if (req.session.loggedIn) {
-    res.redirect('/dashboard');//currently used to get around navbar bug, swap to '/' once fixed
+    res.redirect('/dashboard'); //currently used to get around navbar bug, swap to '/' once fixed
     return;
   } else {
     res.render('login');

@@ -3,7 +3,7 @@ const post_id = document.querySelector('input[name="post-id"]').value.trim();
 const newCommentHandler = async (event) => {
   event.preventDefault();
   const commentContent = document
-    .querySelector('input[name="commentContent"]')
+    .querySelector('input[name="comment-body"]')
     .value.trim();
   if (commentContent) {
     const response = await fetch('/api/comments', {
