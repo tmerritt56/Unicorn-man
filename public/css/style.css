@@ -38,8 +38,8 @@
 }
 
 main {
-  background-color: beige;
   margin-top: 6em;
+  background: tra;
 }
 
 body {
@@ -49,7 +49,7 @@ body {
   overflow-x: hidden;
   background: var(--color-bg);
   font-size: 0.9rem;
-  background-color: beige;
+  background-color: white;
 }
 
 @keyframes gradient {
@@ -234,6 +234,7 @@ p {
 .card-header-title {
   background-color: black;
   color: white;
+  border-radius: 8px 8px 0px 0px;
 }
 
 .category__button:hover {
@@ -241,8 +242,9 @@ p {
 }
 
 .card-content {
-  background-color: grey;
-  color: white;
+  background-color: #f8f8f8;
+  color: black;
+  border-radius: 0px 0px 8px 8px;
 }
 
 footer {
@@ -319,4 +321,156 @@ body.dark .card-header-title {
   background-size: 400% 400%;
   animation: gradient 15s ease infinite;
   color: black;
+}
+
+.title {
+  color: black;
+
+}
+
+
+input{
+	width: 60%;
+	height: 40px;
+	background: #e0dede9d;
+	justify-content: center;
+	display: flex;
+	margin: 20px auto;
+	padding: 10px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+  max-width: 300px;
+}
+
+.button {
+  width: 60%;
+	height: 40px;
+	margin: 10px auto;
+	justify-content: center;
+	display: block;
+	color: #fff;
+	background: var(--color-primary-variant);
+	font-size: 1em;
+	font-weight: bold;
+	margin-top: 20px;
+	outline: none;
+	border: none;
+	border-radius: 5px;
+	transition: .2s ease-in;
+	cursor: pointer;
+  max-width: 300px;
+}
+
+.loginP  {
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  height: 100%;
+  }
+
+  .signupP  {
+    justify-content: center;
+    width: 100%;
+    display: flex;
+    height: 100%;
+    }
+
+
+    form{
+      width: 400px;
+      background-color: rgba(255,255,255,0.13);
+      position: absolute;
+      transform: translate(-50%,-50%);
+      top: 50%;
+      left: 50%;
+      border-radius: 10px;
+      backdrop-filter: blur(10px);
+      border: 2px solid rgba(255,255,255,0.1);
+      box-shadow: 0 0 40px rgba(8,7,16,0.6);
+      padding: 50px 35px;
+  }
+  form *{
+      font-family: 'Poppins',sans-serif;
+      color: var(--color-bg);
+      letter-spacing: 0.5px;
+      outline: none;
+      border: none;
+  }
+
+  .comment-form {
+
+    background-color: var(--color-primary-light);
+    color: black;
+    position: absolute;
+    align-items:flex-end;
+    justify-content: space-between;
+    
+  }
+
+  .comment-form-div {
+    align-items: center;
+    justify-content: center;
+  }
+
+  #formButton {
+    margin: auto;
+    width: auto;
+  }
+
+  #textAreaComment {
+    min-height: 50px;
+    min-width: 275px;
+    border-radius: 3px;
+}
+
+
+.loginHead {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 42px;
+  text-align: center;
+  color:var(--color-primary);
+}
+
+.signup  {
+  justify-content: center;
+  width: 100%;
+  display: flex;
+  height: 100%;
+  }
+
+  .is-pulled-right {
+    color: rgba(0, 0, 0, 0.556);
+    margin-right: 5px;
+  }
+
+  
+
+  .button-is-warning-div {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+
+  }
+
+  .button.is-warning {
+    background-color: #ffdd57;
+    border-color: transparent;
+    color: rgba(0,0,0,.7);
+    width: 115px;
+    margin-top: -35px;
+}
+
+.button.is-danger {
+  background-color: #f14668;
+  border-color: transparent;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  width: 80px;
+}
+
+.delete-post-btn {
+  background-color: rgb(241, 82, 82)
 }
