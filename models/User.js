@@ -35,6 +35,14 @@ User.init(
         len: [8],
       },
     },
+    user_credit: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
+    user_reward: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
   },
   {
     hooks: {

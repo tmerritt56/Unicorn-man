@@ -31,7 +31,7 @@ router.get('/', (req, res) => {
 router.post('/', withAuth, async (req, res) => {
   try {
     const dbCommentData = await Comment.create({
-      ...req.body.comment_content,
+      comment_content: req.body.comment_content,
       post_id: req.body.post_id,
       user_id: req.session.user_id,
     });

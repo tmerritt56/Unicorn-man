@@ -25,6 +25,10 @@ Post.init(
         key: 'id',
       },
     },
+    post_credit: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+    },
   },
   {
     sequelize,

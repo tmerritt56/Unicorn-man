@@ -22,7 +22,13 @@ router.get('/:id', (req, res) => {
     include: [
       {
         model: Post,
-        attributes: ['id', 'title', 'post_content', 'created_at'],
+        attributes: [
+          'id',
+          'title',
+          'post_content',
+          'created_at',
+          'post_credit',
+        ],
       },
       {
         model: Comment,
@@ -66,22 +72,18 @@ router.post('/login', async (req, res) => {
     const userData = await User.findOne({ where: { email: req.body.email } });
 
     if (!userData) {
-      res
-        .status(400)
-        .json({
-          message: 'You typed your email or password wrong, try again :)',
-        });
+      res.status(400).json({
+        message: 'You typed your email or password wrong, try again :)',
+      });
       return;
     }
 
     const validP = await userData.checkPassword(req.body.password);
 
     if (!validP) {
-      res
-        .status(400)
-        .json({
-          message: 'You typed your email or password wrong, try again :)',
-        });
+      res.status(400).json({
+        message: 'You typed your email or password wrong, try again :)',
+      });
       return;
     }
 
