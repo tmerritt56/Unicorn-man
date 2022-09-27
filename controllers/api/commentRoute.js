@@ -1,21 +1,9 @@
 const router = require('express').Router();
-const { Comment, User } = require('../../models');
+const { Comment } = require('../../models');
 const withAuth = require('../../utils/auth');
 
 router.get('/', (req, res) => {
-  Comment.findAll({
-    attributes: ['id', 'comment_content', 'created_at'],
-    include: [
-      {
-        model: User,
-        attributes: ['username'],
-      },
-      {
-        model: User,
-        attributes: ['username'],
-      },
-    ],
-  })
+  Comment.findAll({})
     .then((dbCommentData) => res.json(dbCommentData))
     .catch((err) => {
       console.log(err);
@@ -42,12 +30,12 @@ router.get('/', (req, res) => {
 
 router.post('/', withAuth, async (req, res) => {
   try {
-    const commentData = await Comment.create({
-      ...req.body,
+    const dbCommentData = await Comment.create({
+      ...req.body.comment_content,
+      post_id: req.body.post_id,
       user_id: req.session.user_id,
     });
-    console.log(commentData);
-    res.status(200).json(commentData);
+    res.status(200).json(dbCommentData);
   } catch (err) {
     res.status(400).json(err);
   }
