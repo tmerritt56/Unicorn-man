@@ -1,7 +1,7 @@
 async function commentFormHandler(event){
   event.preventDefault();
   const comment_content = document
-    .querySelector('input[name="comment-content"]')
+    .querySelector('textarea[name="comment-content"]')
     .value.trim();
   const post_id = document.querySelector('.id-holder').dataset.id
   if (comment_content) {
