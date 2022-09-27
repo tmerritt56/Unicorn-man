@@ -25,3 +25,4 @@ This exercise requires the following npm modules
 [GitHub repo](https://github.com/tmerritt56/Unicorn-man)
 [Heroku deployment](https://git.heroku.com/radiant-hollows-45917.git)
 
+https://docs.google.com/presentation/d/1VyxuYiGMo8In4txGYsddycHEGFsotdsH/edit?usp=sharing&ouid=116869724724245696441&rtpof=true&sd=true
