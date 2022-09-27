@@ -1,13 +1,15 @@
 <!-- displaying articles -->
 {{> post-info post}}
 
+{{> comments post.comments}}
+
 <!-- displaying form and comments-->
 <!-- only display if logged in -->
 {{#if loggedIn}}
 <form class="comment-form">
   <div class="comment-form-div">
     <div>
-      <textarea class="ml-5" id="textAreaComment" name="comment-body" placeholder="Be Nice!"></textarea>
+      <textarea class="ml-5" id="textAreaComment" name="comment-content" placeholder="Be Nice!"></textarea>
     </div>
 
     <div>
@@ -20,8 +22,6 @@
   </div>
 </form>
 {{/if}}
-
-{{> comments post.comments}}
 
 {{#if loggedIn}}
 <script src="/js/comment.js"></script>
