@@ -1,27 +1,28 @@
 <!-- displaying articles -->
 {{> post-info post}}
 
+{{> comments post.comments}}
+
 <!-- displaying form and comments-->
 <!-- only display if logged in -->
 {{#if loggedIn}}
 <form class="comment-form">
+
   <div class="comment-form-div">
     <div>
-      <textarea class="ml-5" id="textAreaComment" name="comment-body" placeholder="Be Nice!"></textarea>
+      <textarea class="ml-5" id="comment-content textAreaComment" name="comment-content" placeholder="Be Nice!"></textarea>
     </div>
 
-    <div>
-      <button class="button is-warning ml-5 mb-5" id="formButton" type="submit">add comment</button>
-    </div>
-  
+
+  <div>
+    <button class="button is-warning ml-5 mb-5 add-comment-btn" id="formButton" type="submit">add comment</button>
+  </div>
     <div>
       <a href="/" class="is-pulled-right"> ← back to dashboard</a>
     </div>
   </div>
 </form>
 {{/if}}
-
-{{> comments post.comments}}
 
 {{#if loggedIn}}
 <script src="/js/comment.js"></script>
