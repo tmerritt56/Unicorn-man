@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="/css/jass.css">
   <link rel="stylesheet" href="/css/style.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
-  <script src="https://kit.fontawesome.com/73dc962ca4.js" crossorigin="anonymous"></script>
+  <script src="https://kit.fontawesome.com/f9531c63b2.js" crossorigin="anonymous"></script>
 
 </head>
 
@@ -23,28 +23,30 @@
             <a href="/" class="navbar-item is-hoverable pt-1 nav__items">Homepage</a>
             <a href="/dashboard" class="navbar-item is-hoverable pt-1 nav__items ">Dashboard</a>
             <a href="/dashboard/create/" class="navbar-item is-hoverable pt-1 mr-4 nav__items ">Create Post</a>
+            <div>
+              <p>User Credits</p>
+              <i class="fa-solid fa-coins"></i>
+              <p class="user-credit">0</p>
+            </div>
+            <div>
+              <p>User Rewards</p>
+              <i class="fa-solid fa-money-bill-transfer"></i>
+              <p class="user-reward">15</p>
+            </div>
             <button id="logout" class="button is-danger nav__items">Logout</button>
             <div>
-	                  <input type="checkbox" class="checkbox" id="chk" />
-	                  <label class="label" for="chk">
-		                  <i class="fa-solid fa-horse-head"></i>
-	                    <i class="fa-solid fa-sun"></i>
-		                  <div class="ball"></div>
-	                    </label>
+              <input type="checkbox" class="checkbox" id="chk" />
+              <label class="label" for="chk">
+              <i class="fa-solid fa-horse-head"></i>
+              <i class="fa-solid fa-sun"></i>
+              <div class="ball"></div>
+              </label>
+            </div>
             <p>Logged in</p>
             {{else}}
             {{!-- <a href="/" class="navbar-item is-hoverable pt-1">Homepage</a> --}}
             <a href="/login" class="navbar-item is-hoverable pt-1">Login</a>
             <a href="/signup" class="navbar-item is-hoverable pt-1">Sign Up</a>
-            <div>
-	                  <input type="checkbox" class="checkbox" id="chk" />
-	                  <label class="label" for="chk">
-		                  <i class="fa-solid fa-horse-head"></i>
-	                    <i class="fa-solid fa-sun"></i>
-		                  <div class="ball"></div>
-	                    </label>
-                      </div>
-
             <p class="logIn">not logged in</p>
             {{/if}}
             </div>
@@ -61,6 +63,7 @@
 {{/if}}
   
 <script src="/features/darkmode/button.js"></script>
+<script src="/js/likes.js"></script>
 </body>
 
 
