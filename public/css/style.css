@@ -253,8 +253,22 @@ footer {
 }
 
 .comments {
-  background-color: beige;
   color: black;
+  align-items: center;
+  padding: 12px;
+}
+
+.comment-text {
+  background-color: #c7cedd;
+    border-radius: 4px;
+    padding: 8px;
+    max-width: 80%;
+    margin: auto;
+    margin-top: 10px;
+}
+
+.comment-meta {
+  color: #00000059;
   margin:auto;
   backdrop-filter: off;
 }
@@ -402,11 +416,15 @@ input{
 
   .comment-form {
 
-    background-color: var(--color-primary-light);
-    color: black;
-    position: absolute;
-    align-items:flex-end;
-    justify-content: space-between;
+      background-color: var(--color-primary-light);
+      color: black;
+      /* position: absolute; */
+      align-items: flex-end;
+      justify-content: space-between;
+      top: 0%;
+      /* left: 0%; */
+      position: relative;
+      margin-top: 128px;
     
   }
 
