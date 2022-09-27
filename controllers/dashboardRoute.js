@@ -33,7 +33,7 @@ router.get('/', withAuth, (req, res) => {
   })
     .then((dbPostData) => {
       const posts = dbPostData.map((post) => post.get({ plain: true }));
-      res.render('dashboard', { posts, loggedIn: true });
+      res.render('dashboard', { posts, loggedIn: req.session.loggedIn});
     })
     .catch((err) => {
       console.log(err);
@@ -80,7 +80,7 @@ router.get('/edit/:id', withAuth, (req, res) => {
 
       res.render('editPost', {
         post,
-        loggedIn: true,
+        loggedIn: req.session.loggedIn,,
       });
     })
     .catch((err) => {

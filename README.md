@@ -23,5 +23,5 @@ This exercise requires the following npm modules
 # Links
 
 [GitHub repo](https://github.com/tmerritt56/Unicorn-man)
-[Heroku deployment](https://git.heroku.com/radiant-hollows-45917.git)
+[Heroku deployment](https://radiant-hollows-45917.herokuapp.com/)
 
