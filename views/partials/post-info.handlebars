@@ -1,26 +1,20 @@
 <div class="card card-radius mb-6">
-
-    <div class="card-header card-header-title">
+  <div class="card-header card-header-title">
+    
         <div class="column">
             <p class=" has-text-primary-light"></p>
-            <a href="/post/{{id}}"  class=" is-capitalized is-pulled-left">{{title}} </a></p>
-        </div>
-        <div>
-            <i class="like-credit fa-solid fa-coins"></i>
-            <p class="post-credit">15</p>
-        </div>
-    </div>
+      <a href="/post/{{id}}"  class=" is-capitalized is-pulled-left">{{title}} </a></p>
+      </div>
+  </div>
     <div class="card-content">
         <div data-id={{id}} class="content has-text-justified id-holder"> 
             {{post_content}}
         </div>
-        <div class="is-pulled-right">
-            
-            <b>{{user.username}}</b> | 
-            | {{format_date created_at}} | <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
-        </div>
+            <div class="is-pulled-right">
+                <b>{{user.username}}</b> | 
+                | {{format_date created_at}} | <a href="/post/{{id}}">{{comments.length}} {{format_plural "comment" comments.length}}</a>
+            </div>
         
     </div>
 </div>
-
 
