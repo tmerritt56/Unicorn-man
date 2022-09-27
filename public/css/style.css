@@ -255,6 +255,8 @@ footer {
 .comments {
   background-color: beige;
   color: black;
+  margin:auto;
+  backdrop-filter: off;
 }
 
 /* /////Dark mode /////*/
@@ -474,3 +476,5 @@ input{
 .delete-post-btn {
   background-color: rgb(241, 82, 82)
 }
+
+comment-content
