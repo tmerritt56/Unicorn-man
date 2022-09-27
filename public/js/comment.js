@@ -1,13 +1,14 @@
-async function commentFormHandler(event){
+const post_id = document.querySelector('input[name="post-id"]').value.trim();
+
+const newCommentHandler = async (event) => {
   event.preventDefault();
-  const comment_content = document
-    .querySelector('input[name="comment-content"]')
+  const commentContent = document
+    .querySelector('input[name="comment-body"]')
     .value.trim();
-  const post_id = document.querySelector('.id-holder').dataset.id
-  if (comment_content) {
-    const response = await fetch(`/api/comments`, {
+  if (commentContent) {
+    const response = await fetch('/api/comments', {
       method: 'POST',
-      body: JSON.stringify({ comment_content,post_id }),
+      body: JSON.stringify({ post_id, commentContent }),
       headers: {
         'Content-Type': 'application/json',
       },
@@ -22,4 +23,4 @@ async function commentFormHandler(event){
 
 document
   .querySelector('.comment-form')
-  .addEventListener('submit', commentFormHandler);
+  .addEventListener('submit', newCommentHandler);
